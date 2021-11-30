@@ -1,6 +1,6 @@
 import string
 text = open("test.txt", "r")
-d = dict()
+dic = dict()
 for line in text:
 
     line = line.strip()
@@ -8,10 +8,10 @@ for line in text:
     line = line.translate(line.maketrans("", "", string.punctuation))
     words = line.split(" ")
     for word in words:
-        if word in d:
-            d[word] = d[word] + 1
+        if word in dic:
+            dic[word] = dic[word] + 1
         else:
-            d[word] = 1
+            dic[word] = 1
 
-for key in list(d.keys()):
-    print(key, ":", d[key])
+for key in list(dic.keys()):
+    print(key, ":", dic[key])
